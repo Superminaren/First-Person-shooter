@@ -41,16 +41,10 @@ void updateCursor(){
     if(focused){
       dx = mouseX-(width/2);
       dy = mouseY-(height/2);
-      
-      
-      sx+=dx;
-      sy+=dy;
-      stroke(color(0,255,255));
-      ellipse(sx,sy,20,20);
       text("sx: "+sx,20,20);
       text("sy: "+sy,20,40);
       cursor.update(0, 0, wX, wY);
-      //noCursor();
+      noCursor();
     }else{
       cursor();
     }
@@ -84,3 +78,38 @@ PVector getWindowLocation(String renderer) {
   }
   return l;
 }
+
+
+void keyPressed(){
+    println("Key Pressed");
+    switch(key){
+      case 'w':
+        m.p.cr.w = true;
+        break;
+      case 's':
+        m.p.cr.s = true;
+        break;
+      case 'a':
+        m.p.cr.a = true;
+        break;
+      case 'd':
+        m.p.cr.d = true;
+        break;
+    }
+  }
+  void keyReleased(){
+    switch(key){
+      case 'w':
+        m.p.cr.w = false;
+        break;
+      case 's':
+        m.p.cr.s = false;
+        break;
+      case 'a':
+        m.p.cr.a = false;
+        break;
+      case 'd':
+        m.p.cr.d = false;
+        break;
+    }
+  }
