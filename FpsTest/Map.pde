@@ -12,7 +12,7 @@ class Map{
   int vertC = 0;
   
   
-  int pixelLength = 200; //pixel width
+  int pixelLength = 50; //pixel width
   float diff = 9.0; //Height Diff
   float roty = 0;
   
@@ -99,13 +99,13 @@ class Map{
         temp.fill(color(255,hs[counter][z],hs[counter][z]));
         
         //First part of cube
-        temp.curveVertex(counter*pixelLength,hs[counter][z],z*pixelLength);
-        temp.curveVertex((counter+1)*pixelLength,hs[counter+1][z+1],(z+1)*pixelLength);
-        temp.curveVertex((counter+1)*pixelLength,hs[counter+1][z],z*pixelLength);
+        temp.vertex(counter*pixelLength,hs[counter][z],z*pixelLength);
+        temp.vertex((counter+1)*pixelLength,hs[counter+1][z+1],(z+1)*pixelLength);
+        temp.vertex((counter+1)*pixelLength,hs[counter+1][z],z*pixelLength);
         //Second part
-        temp.curveVertex(counter*pixelLength,hs[counter][z],z*pixelLength);
-        temp.curveVertex((counter+1)*pixelLength,hs[counter+1][z+1],(z+1)*pixelLength);
-        temp.curveVertex((counter)*pixelLength,hs[counter][z+1],(z+1)*pixelLength);
+        temp.vertex(counter*pixelLength,hs[counter][z],z*pixelLength);
+        temp.vertex((counter+1)*pixelLength,hs[counter+1][z+1],(z+1)*pixelLength);
+        temp.vertex((counter)*pixelLength,hs[counter][z+1],(z+1)*pixelLength);
         vertC+=2;
         if(vertC>maxVertices){
           vertC = 0;

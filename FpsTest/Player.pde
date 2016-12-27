@@ -30,9 +30,10 @@ class Player{
     pushMatrix();
     translate(width/2,height/2);
     pushMatrix();
-
+    rotateX(rotX);
     rotateY(rotY);
     rotateZ(rotZ);
+    
     translate(-x, y,-z); //(m.hs[(int)(x)][(int)( m.pixelLength)]*m.diff)
     
     for(PShape s : m.parts){
@@ -40,7 +41,7 @@ class Player{
     }
     //shape(m.hmap);
     popMatrix();
-    rotateX(rotX);
+    
     popMatrix();
   }
   
