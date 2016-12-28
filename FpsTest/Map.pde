@@ -12,7 +12,7 @@ class Map{
   int vertC = 0;
   
   
-  int pixelLength = 50; //pixel width
+  int pixelLength = 200; //pixel width
   float diff = 9.0; //Height Diff
   float roty = 0;
   
@@ -55,6 +55,8 @@ class Map{
     
     //translate(cx,cz);
     //p.y = -cd.heightCollision(p,this);
+    println("Y: "+cd.heightCollision(p,this));
+    p.yGoal = -cd.heightCollision(p,this)+(+200);
     p.update(0.1,0.1);
     //translate(width/2,height/2);
     

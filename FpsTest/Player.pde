@@ -8,6 +8,7 @@ class Player{
   float x = 0;
   float y = 0;
   float z = 0;
+  float yGoal = 0;
   
   
   Controls cr = new Controls();
@@ -33,7 +34,7 @@ class Player{
     rotateX(rotX);
     rotateY(rotY);
     rotateZ(rotZ);
-    
+    y +=(yGoal-y)/10.0;
     translate(-x, y,-z); //(m.hs[(int)(x)][(int)( m.pixelLength)]*m.diff)
     
     for(PShape s : m.parts){
